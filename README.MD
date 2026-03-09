@@ -27,4 +27,4 @@ After confirming it is in DFU mode you can run `make flash FLASH_DEVICE=0483:df1
 
 Once this is done, you can run ``ls /dev/serial/by-id/*`` to get the MCU's serial ID ready for your shenanigans
 
-Feel free to ping me (tigsteruk) in Voron or elsewhere with a video of you running the included gcode in the github!
+Feel free to ping me (@tigsteruk) on discord in Voron or elsewhere with a video of you running the included gcode in the github!
