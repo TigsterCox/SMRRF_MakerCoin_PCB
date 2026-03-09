@@ -6,9 +6,7 @@ It should be noted that V1.0, which was handed out at SMRRF2026, has two Silkscr
 # AND
 # "PA8" LED & Breakout Pin is actually pin PA0
 
-Enter you Klipper configurator with the below
-`cd ~/klipper`
-`make menuconfig`
+Enter you Klipper configurator with `cd ~/klipper` and `make menuconfig`
 Follow the below images for configuring klipper, and disabling some features ready for flashing
 
 <p align="left">
@@ -25,8 +23,6 @@ You should see something similar to below by running ``lsusb``
 	<img src="images/DFU.png"/>
 </p>
 
-After confirming it is in DFU mode you can run
-``make flash FLASH_DEVICE=0483:df11``
-this will flash klipper to the STM32
+After confirming it is in DFU mode you can run `make flash FLASH_DEVICE=0483:df11` to flash firmware to the STM32
 
 Once this is done, you can run ``ls /dev/serial/by-id/*`` to get the MCU's serial ID ready for your shenanigans
