@@ -5,36 +5,27 @@ It should be noted that V1.0, which was handed out at SMRRF2026, has two Silkscr
 > Boot0 & RESET are Flipped
 > The "PA8" LED & Breakout Pin is actually pin PA0
 
-To start with flashing, we will begin by installing katapult on your pi if you haven't already.
-
-Firstly run the below, to make sure everything is uptodate and what we need is installed
-``sudo apt update``
-``sudo apt upgrade``
-``sudo apt install python3 python3-serial``
-
-Next, install katapult
-``test -e ~/katapult && (cd ~/katapult && git pull) || (cd ~ && git clone https://github.com/Arksine/katapult) ; cd ~``
-
-After installation has complete, run:
-``cd ~/katapult``
-and then
+Enter you Klipper configurator with the below
+``cd ~/klipper``
 ``make menuconfig``
+Follow the below images for configuring klipper, and disabling some features ready for flashing
 
-Copy the config below and then hit Q to quit and then Y to save
-<p align="center">
-	<img src="images/Katapult_Config.png"/>
+<p align="left">
+	<img src="images/klipper.png"/>
+	<img src="images/features.png"/>
 </p>
 
+Once this is done, exit with Q and then Y to save
 
-Next we will put the STM32 into DFU mode by holding "RESET" and single pressing "BOOT0"
-You can check if the STM32 is in DFU mode by entering ``lsusb`` in the terminal
-You should see something similar to the below image
-<p align="center">
+Enter DFU mode by holding down 'RESET' and single pressing 'BOOT0'
+you should see something similar to below by running ``lsusb``
+
+<p align="left">
 	<img src="images/DFU.png"/>
 </p>
+
 After confirming it is in dfu mode you can run
 ``make flash FLASH_DEVICE=0483:df11``
-this will flash katapult to the STM32
+this will flash klipper to the STM32
 
-after this is done, its likely it will still be in DFU mode as there is no Klipper/Kalico to boot to
-You can once again check with lsusb, and if its not in DFU mode, make sure to enter it into DFU mode
+after this is done, you can run ``ls /dev/serial/by-id/*`` to get the MCU's serial ID ready for your shenanigans
