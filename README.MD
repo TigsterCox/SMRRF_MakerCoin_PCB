@@ -2,8 +2,8 @@
 The Maker Coin PCB is a MakerCoin sized breakout board featuring an STM32 Microcontroller compatible with Klipper & Kalico
 
 It should be noted that V1.0, which was handed out at SMRRF2026, has two Silkscreen errors listed below.
-# Boot0 & RESET are Mislabeled and are flipped
-# "PA8" LED & Breakout Pin is actually pin PA0
+-# Boot0 & RESET are Mislabeled and are flipped
+-# "PA8" LED & Breakout Pin is actually pin PA0
 
 Enter you Klipper configurator with the below
 `cd ~/klipper`
